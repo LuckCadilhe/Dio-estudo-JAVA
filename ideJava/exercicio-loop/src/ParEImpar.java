@@ -1,29 +1,30 @@
 import java.util.Scanner;
-
 public class ParEImpar {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        int quantNumeros;
         int numero;
-        int maior = 0;
-        int soma = 0;
+        int quantPares = 0, quantImpares = 0;
+
+        System.out.println("Quantidade de números: ");
+        quantNumeros = scan.nextInt();
 
         int count = 0;
-
         do {
-            System.out.println("Numero: ");
+            System.out.println("Número: ");
             numero = scan.nextInt();
 
-            soma = soma + numero;
-            
+            if(numero % 2 == 0) {
+                quantPares++;
+            } else {
+                quantImpares++;
+            }
 
+            count++;
+        } while(count < quantNumeros);
 
-            if(numero > maior) maior = numero;
-
-            count ++;
-        } while( count < 5 );
-
-        System.out.println("Maior: " + maior);
-        System.out.println("Média: " + (soma/5));
+        System.out.println("Quantidade Par: " + quantPares);
+        System.out.println("Quantidade Impar: " + quantImpares);
     }
 }
